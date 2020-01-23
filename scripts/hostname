@@ -1,0 +1,10 @@
+#!/bin/bash
+
+color="\e[36m"
+reset="\e[0m"
+
+echo -e "${color}    _ ___                ___${reset}
+${color}   (_) (_)_______  ____ |__ \\\\${reset}
+${color}  / / / / ___/ _ \/ __ \`/_/ /${reset}
+${color} / / / / /  /  __/ /_/ / __/${reset}
+${color}/_/_/_/_/   \___/\__,_/____/${reset}"

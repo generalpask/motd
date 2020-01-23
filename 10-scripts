@@ -1,0 +1,5 @@
+#!/bin/bash
+
+paste <(bash /etc/update-motd.d/scripts/hostname && bash /etc/update-motd.d/scripts/sysinfo) <(bash /etc/update-motd.d/scripts/diskspace && bash /etc/update-motd.d/scripts/services) | column -s $'\t' -tne
+
+echo ""

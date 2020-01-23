@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo ""
+cat /etc/*release | grep "PRETTY_NAME" | cut -d "=" -f 2- | sed 's/"//g'
+uname -sr
+awk -F'( |,|:)+' '{
+    printf("up %dw, %.fd, %dh, %dm\n", 
+           $6/7, ($6/7-int($6/7))/0.143+.05, $8, $9)
+}' <(uptime)
