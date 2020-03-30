@@ -9,14 +9,12 @@ color_success=${color_success:="38;5;10"}
 
 # Declare array of services and pretty human readable names
 declare -a services=(
-"smbd"
 "docker"
 "ufw"
 "fail2ban"
 "netdata"
 )
 declare -a serviceName=(
-"Samba"
 "Docker"
 "UFW"
 "Fail2Ban"
