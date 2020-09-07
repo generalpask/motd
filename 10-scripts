@@ -1,5 +1,9 @@
 #!/bin/bash
 
-paste <(./scripts/hostname && ./scripts/sysinfo && bash ./scripts/services) <(./scripts/diskspace) | column -s $'\t' -tne
+# Use script location as root for relative paths
+parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
+cd "$parent_path"
+
+paste <(./scripts/hostname && ./scripts/sysinfo && ./scripts/services) <(./scripts/diskspace) | column -s $'\t' -tne
 
 echo ""
