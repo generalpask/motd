@@ -1,0 +1,6 @@
+#!/bin/bash
+
+color_primary=${color_primary:="36"}
+
+echo -e "\n\e[${color_primary}mPM2 status\e[0m"
+pm2 ls -m | grep "+--\|status"

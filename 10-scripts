@@ -4,6 +4,6 @@
 parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 cd "$parent_path"
 
-paste <(./scripts/hostname && ./scripts/sysinfo && ./scripts/services) <(./scripts/diskspace) | column -s $'\t' -tne
+paste <(./scripts/hostname && ./scripts/sysinfo && ./scripts/services) <(./scripts/diskspace && ./scripts/pm2) | column -s $'\t' -tne
 
 echo ""
