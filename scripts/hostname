@@ -6,7 +6,7 @@ reset="\e[0m"
 hostname=$(hostname)
 #echo -e "${color}$(figlet -f slant $hostname)${reset}"
 
-figlet -f slant $hostname | \
+figlet -f smslant $hostname | \
 while IFS= read -r ; do
     echo -e "${color}$REPLY ${reset}"
 done
