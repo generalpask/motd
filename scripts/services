@@ -1,11 +1,11 @@
 #!/bin/bash
 export LANG='en_US.UTF-8'
 
-color_primary=${color_primary:="36"}
-color_secondary=${color_secondary:="35"}
-color_danger=${color_danger:="38;5;1"}
-color_warning=${color_warning:="38;5;11"}
-color_success=${color_success:="38;5;10"}
+color_primary="\e[36m" #cyan
+color_danger="\e[31m" # Red
+color_warning="\e[33m" # Yellow
+color_success="\e[32m" # Green
+color_reset="\e[0m"
 
 # Declare array of services and pretty human readable names
 declare -a services=(
@@ -34,7 +34,7 @@ width=$((34))
 line=""
 lineLen=0
 
-echo -e "\n\e[${color_primary}mServices running\e[0m"
+echo -e "\n${color_primary}Services running${color_reset}"
 
 for i in ${!serviceStatus[@]}
 do
@@ -53,9 +53,9 @@ do
 
     # Color the next line green if it's active, else red
     if [[ "${serviceStatus[$i]}" == "active" ]]; then
-    line+="\e[${color_success}m●\e[0m ${serviceName[$i]} "
+    line+="${color_success}●${color_reset} ${serviceName[$i]} "
     else
-    line+="\e[1;${color_warning}m▲\e[0m ${serviceName[$i]} "
+    line+="${color_warning}▲${color_reset} ${serviceName[$i]} "
     fi
 done
 
