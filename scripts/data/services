@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# This is the systemd process names for your services
+declare -a services=(
+)
+
+# This is what name will be displayed for each service
+declare -a serviceName=(
+)

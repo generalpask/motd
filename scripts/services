@@ -8,16 +8,10 @@ color_warning=${color_warning:="38;5;11"}
 color_success=${color_success:="38;5;10"}
 
 # Declare array of services and pretty human readable names
-declare -a services=(
-"docker"
-"ufw"
-"fail2ban"
-)
-declare -a serviceName=(
-"Docker"
-"UFW"
-"Fail2Ban"
-)
+# This is done from a separate file
+THIS_DIR=$(dirname $(readlink -f $0))
+. $THIS_DIR/data/services
+
 declare -a serviceStatus=()
 
 # Get status of all my services
