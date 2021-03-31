@@ -1,0 +1,7 @@
+#!/bin/bash
+
+upgradable=`apt list --upgradable 2> /dev/null | wc -l 2> /dev/null`
+upgradable=$((upgradable - 1))
+
+echo
+echo "${upgradable} packages can be updated."
